@@ -13,7 +13,9 @@ sgp = adafruit_sgp40.SGP40(i2c)
 bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
 # Initialize IN13 driver
 indicator = in13.IN13(i2c, addr = 0x13)
+
 indicator.filter = 1.0
+# test that IN13 is working by setting to max and min values
 indicator.value = 1.0
 time.sleep(1)
 indicator.value = 0
@@ -21,8 +23,6 @@ time.sleep(1)
 indicator.value = 1.0
 time.sleep(1)
 indicator.value = 0
-time.sleep(1)
-indicator.value = 1.0
 time.sleep(1)
 
 while True:
@@ -37,11 +37,13 @@ while True:
     voc_index = sgp.measure_index(temperature=temperature, relative_humidity=humidity)
     print(f"VOC index: {voc_index}")
     
+    # convert voc index to a value from 0 to 1.0 for the IN13 tube
     if (voc_index == 0):
         value = 0
     else:
         value = voc_index/500
+        
     print(f"Indicator value: {value}")
     indicator.value = value
     print("")
-    time.sleep(1)
+    time.sleep(0.5)
