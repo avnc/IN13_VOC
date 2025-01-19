@@ -1,8 +1,11 @@
-"""Driver for I2C in-13 nixie tube.
+"""
+CircuitPython Driver for I2C in-13 nixie tube.
 
 https://www.tindie.com/products/eclipsevl/in-13-bargraph-nixie-tube-with-driver-and-dc-dc/?pt=ac_prod_search
+Based on the Micropython driver from BrianPugh here: https://github.com/BrianPugh/micropython-libs/blob/main/lib/in13.py
+Modified for use in CircuitPython (using the I2CDevice class)
 """
-
+from adafruit_bus_device.i2c_device import I2CDevice
 
 class IN13:
     def __init__(self, i2c, addr=0x14):
@@ -21,9 +24,12 @@ class IN13:
         self.addr = addr
         self._value = 0
         self._filter = 0
+        self._device = I2CDevice(i2c, addr)
 
         # Set control mode to digital
-        self.i2c.writeto_mem(addr, 0, bytes([0x01]))
+        # self.i2c.writeto_mem(addr, 0, bytes([0x01]))
+        with self._device:
+            self._device.write(bytes([0x00,0x01]))
 
     @property
     def value(self):
@@ -36,7 +42,9 @@ class IN13:
             raise ValueError
         self._value = value
         value = round(0xFF * value)
-        self.i2c.writeto_mem(self.addr, 0x01, bytes([value]))
+        # self.i2c.writeto_mem(self.addr, 0x01, bytes([value]))
+        with self._device:
+            self._device.write(bytes([0x01,value]))
 
     @property
     def filter(self):
@@ -49,4 +57,6 @@ class IN13:
             raise ValueError
         self._filter = value
         value = round(0x1F * value)
-        self.i2c.writeto_mem(self.addr, 0x02, bytes([value]))
+       #  self.i2c.writeto_mem(self.addr, 0x02, bytes([value]))
+        with self._device:
+            self._device.write(bytes([0x02,value]))        

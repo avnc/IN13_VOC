@@ -1,21 +1,21 @@
 import board
 import busio
 import time
-
-
 import adafruit_sgp40
 from adafruit_bme280 import basic as adafruit_bme280
 import in13
 
 
 i2c = busio.I2C(board.GP17, board.GP16)
+# devices
 sgp = adafruit_sgp40.SGP40(i2c)
 bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
-# Initialize IN13 driver
 indicator = in13.IN13(i2c, addr = 0x13)
 
+# set filter for IN13, controls how fast the indicator changes (1.0 being the slowest)
 indicator.filter = 1.0
-# test that IN13 is working by setting to max and min values
+
+# quick test that IN13 is working by setting to max and min values
 indicator.value = 1.0
 time.sleep(1)
 indicator.value = 0
@@ -25,6 +25,7 @@ time.sleep(1)
 indicator.value = 0
 time.sleep(1)
 
+# our main loop to read the sensor data and set the IN13 value
 while True:
     print("Raw Gas: ", sgp.raw)
     # Lets quickly grab the humidity and temperature
