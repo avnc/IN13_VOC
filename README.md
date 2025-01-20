@@ -6,15 +6,17 @@ The primary reason for this project was I have a small, fairly crowded office wh
 ![Warm photo of an IN13 Nixie tube inside a glass test tube, mounted on a warm wood grain 3D printed case. In the backround of the photo is a skull shaped bottle full of unlit LEDs, part of a lamp, a picture frame and a power supply](/media/IMG_4198.jpg)
 
 ## Hardware I used and where I got it:
-- IN13 bargraph nixie tube with driver board from *eclipsevl* on Tindie, available here: https://www.tindie.com/products/eclipsevl/in-13-bargraph-nixie-tube-with-driver-and-dc-dc/
-- Adafruit SGP40 VOC Air quality sensor, available here: https://www.adafruit.com/product/4829
-- Adafruit BME280 temperature, humidity and pressure sensor, available here: https://www.adafruit.com/product/2652
-- Raspberry Pi Pico 2 W as the microcontroller, available here: https://www.adafruit.com/product/6087
-- 20mm 3.3v fan, available here (but probably elsewhere too): https://www.amazon.com/Easycargo-2pcs-20mm-Small-Quite/dp/B0CFKYVVXL
-- 30mm OD x 165mm glass test tube, https://www.amazon.com/dp/B07Z5YM4SN
+- IN13 bargraph nixie tube with driver board from *eclipsevl* on Tindie ($25 + shipping), available here: https://www.tindie.com/products/eclipsevl/in-13-bargraph-nixie-tube-with-driver-and-dc-dc/
+- Adafruit SGP40 VOC Air quality sensor ($15), available here: https://www.adafruit.com/product/4829
+- Adafruit BME280 temperature, humidity and pressure sensor ($15), available here: https://www.adafruit.com/product/2652
+- Raspberry Pi Pico 2 W as the microcontroller ($7), available here: https://www.adafruit.com/product/6087
+- 20mm 3.3v fan, available here but probably elsewhere too ($13 for 2): https://www.amazon.com/Easycargo-2pcs-20mm-Small-Quite/dp/B0CFKYVVXL
+- 30mm OD x 165mm glass test tube ($25 for 15... ugh), https://www.amazon.com/dp/B07Z5YM4SN
 - 2 x M2 10mm bolts and M2 nuts
-- 2 x JST-SH to female dupont cable: https://www.adafruit.com/product/4397
-- 1 x 50mm JST-SH (or QT) cable: https://www.adafruit.com/product/4399
+- 2 x JST-SH to female dupont cable ($0.95 each): https://www.adafruit.com/product/4397
+- 1 x 50mm JST-SH (or QT) cable ($0.95): https://www.adafruit.com/product/4399
+
+Total cost of all of this a bit high. I will offset some by making two (won't need to buy fan or test tubes for second one) but less so if you break an IN13 tube like I did... If you have a fairly constant temperature and humidity you could skip the BME280 and save $15. My office faces south and get pretty warm and humid in summer so was thinking I needed it but I honestly do not know how much this matters.
 
 ## Tools
 - 3D printer, I'm using an Ender 5s1 (I'm continually tempted to get a better printer, but this one works fine so resisting so far)
