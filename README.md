@@ -18,6 +18,8 @@ The primary reason for this project was I have a small, fairly crowded office wh
 
 Total cost of all of this a bit high. I will offset some by making two (won't need to buy fan or test tubes for second one) but less so if you break an IN13 tube like I did... If you have a fairly constant temperature and humidity you could skip the BME280 and save $15. My office faces south and get pretty warm and humid in summer so was thinking I needed it but I honestly do not know how much this matters.
 
+Note, you could also use the IN-13 as an indicator for a variety of other sensed data (temperature, humidity, pressure, CO2, etc), just switch out the sensors and adjust accordingly.
+
 ## Tools
 - 3D printer, I'm using an Ender 5s1 (I'm continually tempted to get a better printer, but this one works fine so resisting so far)
 - wire stripper
