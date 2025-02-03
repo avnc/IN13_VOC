@@ -30,7 +30,7 @@ Note, you could also use the IN-13 as an indicator for a variety of other sensed
 ## 3D Printed case:
 The 3 piece case is availabe in the [stl folder](/stl/). The three pieces are:
 - [Nixie case bottom.stl](/stl/Nixie%20case%20bottom.stl), bottom piece with mounting posts for the Pico, SGP40, BME280 and a small 20mm 3.3v fan. These mounts aren't the strongest, so careful.
-- [Nixie case top.stl](/stl/Nixie%20case%20top.stl), the top of the case with hole for the IN13 and a circular slot for a glass test tube to provice a bit of protection for the nixie tube.
+- [Nixie case top.stl](/stl/Nixie%20case%20top.stl), the top of the case with hole for the IN13 and a circular slot for a glass test tube to provide a bit of protection for the nixie tube.
 - [Nixie case round top.stl](/stl/Nixie%20case%20round%20top.stl), a rounded top to give the case a bit nicer feel while also helping to hold the test tube straighter. This can be glued to the case top piece or just rest on top.
 
 ![Rendering of the round bottom part of case, in red on a white background, the part is casting a shadow to the left and mounting posts and vent holes are visible](/media/t725.png)
